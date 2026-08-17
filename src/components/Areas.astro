@@ -1,0 +1,46 @@
+---
+import { site } from "../data/site";
+---
+
+<section class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-accent-500 font-semibold text-sm tracking-wider uppercase">
+        Especialización
+      </span>
+      <h2 class="text-4xl lg:text-5xl font-black text-navy-950 mt-3 leading-tight">
+        Áreas de Desempeño
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
+      {
+        site.areas.map((area, i) => (
+          <div
+            class={`group relative overflow-hidden rounded-2xl ${
+              i === 0 ? "col-span-2 lg:col-span-2 aspect-[16/9] lg:aspect-auto" : ""
+            } ${i === 4 ? "col-span-2 lg:col-span-1" : ""} ${
+              i > 0 && i < 4 ? "aspect-square" : ""
+            }`}
+          >
+            <img
+              src={area.image}
+              alt={area.title}
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/30 to-transparent"></div>
+            <div class="absolute inset-0 flex items-end p-6">
+              <h3 class="text-white font-bold text-lg lg:text-xl">{area.title}</h3>
+            </div>
+            <div class="absolute top-4 right-4 w-8 h-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

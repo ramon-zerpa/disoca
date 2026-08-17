@@ -1,0 +1,51 @@
+---
+import { site } from "../data/site";
+---
+
+<section id="servicios" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-16">
+      <span class="text-accent-500 font-semibold text-sm tracking-wider uppercase">
+        Lo que hacemos
+      </span>
+      <h2 class="text-4xl lg:text-5xl font-black text-navy-950 mt-3 leading-tight">
+        Nuestros Servicios
+      </h2>
+      <p class="text-navy-600 text-lg mt-4 leading-relaxed">
+        Soluciones integrales de ingeniería y construcción para los sectores más exigentes.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        site.services.map((service, i) => (
+          <article class="group relative bg-navy-950 rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer">
+            <img
+              src={service.image}
+              alt={service.title}
+              class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+
+            <div class="absolute inset-0 p-8 flex flex-col justify-end">
+              <span class="text-accent-500 font-black text-6xl opacity-20 absolute top-6 right-8">
+                0{i + 1}
+              </span>
+              <h3 class="text-2xl font-bold text-white mb-3">{service.title}</h3>
+              <p class="text-white/60 text-sm leading-relaxed line-clamp-4">
+                {service.description}
+              </p>
+              <div class="mt-4 flex items-center gap-2 text-accent-400 text-sm font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                <span>Ver más</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

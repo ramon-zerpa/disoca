@@ -1,0 +1,90 @@
+---
+import { site } from "../../data/site";
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-paper/95 backdrop-blur border-b border-line">
+  <div class="relative">
+    <div class="h-[3px] bg-blueprint" aria-hidden="true"></div>
+    <div class="flex items-center justify-between px-5 md:px-10 py-4">
+      <a href="#top" class="flex items-center gap-3" aria-label="DISOCA — Inicio">
+        <img
+          src="/images/logo-disoca-transparent.png"
+          alt="DISOCA"
+          class="h-10 md:h-11 w-auto"
+          width="500"
+          height="151"
+        />
+        <span class="hidden md:inline font-tech text-[9px] tracking-[0.25em] uppercase text-steel leading-tight">
+          Ing. &amp; Const.<br />desde {site.since}
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7 font-tech text-[11px] tracking-[0.15em] uppercase">
+        {
+          site.nav.map((item, i) => (
+            <a
+              href={item.href}
+              class="group flex items-center gap-1.5 text-ink/80 hover:text-blueprint transition-colors duration-200"
+            >
+              <span class="text-blueprint">L-{String(i + 1).padStart(2, "0")}</span>
+              <span>{item.label}</span>
+            </a>
+          ))
+        }
+      </nav>
+
+      <button
+        id="v3-menu-btn"
+        class="lg:hidden font-tech text-[11px] tracking-[0.15em] uppercase flex items-center gap-2 text-ink"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <span>Menú</span>
+        <span class="text-signal">+</span>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="v3-mobile-menu"
+    class="hidden lg:hidden fixed inset-0 top-[53px] bg-paper z-40 flex-col"
+  >
+    <div class="h-[3px] bg-signal" aria-hidden="true"></div>
+    <nav class="flex flex-col px-6 pt-4">
+      {
+        site.nav.map((item, i) => (
+          <a
+            href={item.href}
+            class="v3-mobile-link group flex items-baseline gap-4 py-4 border-b border-line"
+          >
+            <span class="font-tech text-xs text-blueprint">L-{String(i + 1).padStart(2, "0")}</span>
+            <span class="font-display text-4xl uppercase tracking-wide text-ink group-hover:text-blueprint transition-colors">
+              {item.label}
+            </span>
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("v3-menu-btn");
+  const menu = document.getElementById("v3-mobile-menu");
+  let open = false;
+
+  const setMenu = (state: boolean) => {
+    open = state;
+    if (!menu || !btn) return;
+    menu.classList.toggle("hidden", !open);
+    menu.classList.toggle("flex", open);
+    btn.setAttribute("aria-expanded", String(open));
+    btn.innerHTML = open
+      ? '<span>Cerrar</span><span class="text-signal">×</span>'
+      : '<span>Menú</span><span class="text-signal">+</span>';
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+
+  btn?.addEventListener("click", () => setMenu(!open));
+  menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+</script>

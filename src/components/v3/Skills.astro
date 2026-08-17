@@ -1,0 +1,95 @@
+---
+import { site } from "../../data/site";
+---
+
+<section id="habilidades" class="relative bg-ink text-paper">
+  <div class="px-5 md:px-10 lg:px-16 py-16 md:py-24">
+    <div class="flex items-end justify-between gap-6 mb-12">
+      <div>
+        <p class="font-tech text-[10px] tracking-[0.3em] uppercase text-[#9fb6c8] mb-3">LÁMINA 05 · CAPACIDAD</p>
+        <h2 class="font-display uppercase text-[clamp(2rem,6vw,4.5rem)] leading-none">Especialidades</h2>
+      </div>
+      <span class="hidden md:inline font-tech text-[10px] tracking-[0.25em] uppercase text-[#9fb6c8]">
+        % DE CAPACIDAD
+      </span>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7 space-y-7">
+        {
+          site.skills.map((s, i) => (
+            <div>
+              <div class="flex justify-between font-tech text-[11px] tracking-[0.2em] uppercase mb-2">
+                <span class="text-[#9fb6c8]">{s.name}</span>
+                <span class="text-paper"><span class="v3-bar-count" data-target={s.percent}>0</span>%</span>
+              </div>
+              <div class="relative h-3 bg-[#1e2b34]" aria-hidden="true">
+                <div class="v3-bar absolute left-0 top-0 h-full bg-blueprint" data-target={s.percent} style="width: 0%"></div>
+                <!-- ticks -->
+                <div class="absolute inset-y-0 left-0 right-0 flex justify-between pointer-events-none">
+                  {Array.from({ length: 5 }).map((_, t) => (
+                    <span class="w-px bg-paper/30" aria-hidden="true"></span>
+                  ))}
+                </div>
+                <span class="absolute top-[-3px] w-1 h-[18px] bg-signal" style={{ left: `calc(${s.percent}% - 2px)` }} aria-hidden="true"></span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="lg:col-span-5 relative">
+        <div class="relative border border-paper/15 p-3">
+          <img
+            src={site.skillsImage}
+            alt="Equipos y maquinaria DISOCA"
+            class="w-full aspect-[4/3] object-cover grayscale-[15%]"
+            loading="lazy"
+          />
+          <div class="mt-2 flex justify-between font-tech text-[9px] tracking-[0.2em] uppercase text-[#9fb6c8]">
+            <span>Equipos propios</span>
+            <span class="text-signal">101+ unidades</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        io.unobserve(e.target);
+        const root = e.target as HTMLElement;
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const bars = root.querySelectorAll<HTMLElement>(".v3-bar");
+        const counts = root.querySelectorAll<HTMLElement>(".v3-bar-count");
+        bars.forEach((b) => {
+          b.style.width = reduce ? `${b.dataset.target ?? 0}%` : "0%";
+        });
+        requestAnimationFrame(() => {
+          bars.forEach((b) => {
+            if (!reduce) b.style.transition = "width 1.2s cubic-bezier(0.16,1,0.3,1)";
+            b.style.width = `${b.dataset.target ?? 0}%`;
+          });
+        });
+        counts.forEach((c) => {
+          const target = Number(c.dataset.target ?? 0);
+          const dur = reduce ? 0 : 1100;
+          const start = performance.now();
+          const tick = (now: number) => {
+            const p = dur === 0 ? 1 : Math.min((now - start) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            c.textContent = String(Math.round(target * eased));
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      }
+    },
+    { threshold: 0.3 }
+  );
+  document.querySelectorAll<HTMLElement>("#habilidades").forEach((el) => io.observe(el));
+</script>

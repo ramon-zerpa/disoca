@@ -1,0 +1,36 @@
+---
+import { site } from "../../data/site";
+---
+
+<section id="areas" class="relative bg-ink text-paper">
+  <div class="px-5 md:px-10 lg:px-16 py-16 md:py-24">
+    <div class="flex items-end justify-between gap-6 mb-12">
+      <div>
+        <p class="font-tech text-[10px] tracking-[0.3em] uppercase text-[#9fb6c8] mb-3">LÁMINA 06 · ÁREAS</p>
+        <h2 class="font-display uppercase text-[clamp(2rem,6vw,4.5rem)] leading-none">Áreas de desempeño</h2>
+      </div>
+      <span class="hidden md:inline font-tech text-[10px] tracking-[0.25em] uppercase text-[#9fb6c8]">
+        MULTIDISCIPLINARIO
+      </span>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+      {
+        site.areas.map((a, i) => (
+          <figure class="group relative overflow-hidden border border-paper/10">
+            <img
+              src={a.image}
+              alt={a.title}
+              class="w-full aspect-square object-cover grayscale-[20%] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent p-3 pt-10">
+              <span class="font-tech text-[9px] tracking-[0.2em] uppercase text-[#9fb6c8] block">ÁREA 0{i + 1}</span>
+              <figcaption class="font-display text-base md:text-lg uppercase tracking-wide text-paper">{a.title}</figcaption>
+            </div>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

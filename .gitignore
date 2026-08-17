@@ -1,0 +1,17 @@
+# Build
+dist/
+.astro/
+
+# Dependencias
+node_modules/
+
+# Skills locales del agente (opencode)
+.opencode/
+
+# Capturas de vista previa
+previews/
+
+# Logs y sistema
+*.log
+.DS_Store
+Thumbs.db

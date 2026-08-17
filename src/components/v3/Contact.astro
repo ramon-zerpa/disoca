@@ -1,0 +1,112 @@
+---
+import { site } from "../../data/site";
+---
+
+<section id="contacto" class="relative bg-paper">
+  <div class="px-5 md:px-10 lg:px-16 py-16 md:py-24">
+    <div class="flex items-end justify-between gap-6 mb-12">
+      <div>
+        <p class="font-tech text-[10px] tracking-[0.3em] uppercase text-blueprint mb-3">LÁMINA 09 · CONTACTO</p>
+        <h2 class="font-display uppercase text-[clamp(2rem,6vw,4.5rem)] leading-none">Hablemos de tu obra</h2>
+      </div>
+      <span class="hidden md:inline font-tech text-[10px] tracking-[0.25em] uppercase text-steel">
+        4 PAÍSES · <span class="text-signal">DISPONIBLES</span>
+      </span>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-10">
+      <!-- Formulario -->
+      <div class="lg:col-span-7">
+        <form
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          class="grid sm:grid-cols-2 gap-5"
+        >
+          <label class="block sm:col-span-1">
+            <span class="font-tech text-[10px] tracking-[0.25em] uppercase text-steel mb-1 block">Nombre *</span>
+            <input
+              type="text"
+              name="nombre"
+              required
+              class="w-full border border-line bg-white px-4 py-3 font-body text-sm text-ink placeholder:text-steel/60 focus:outline-none focus:border-blueprint focus:ring-1 focus:ring-blueprint transition-colors"
+              placeholder="Tu nombre"
+            />
+          </label>
+          <label class="block sm:col-span-1">
+            <span class="font-tech text-[10px] tracking-[0.25em] uppercase text-steel mb-1 block">Empresa</span>
+            <input
+              type="text"
+              name="empresa"
+              class="w-full border border-line bg-white px-4 py-3 font-body text-sm text-ink placeholder:text-steel/60 focus:outline-none focus:border-blueprint focus:ring-1 focus:ring-blueprint transition-colors"
+              placeholder="Empresa / Organización"
+            />
+          </label>
+          <label class="block sm:col-span-1">
+            <span class="font-tech text-[10px] tracking-[0.25em] uppercase text-steel mb-1 block">Correo *</span>
+            <input
+              type="email"
+              name="correo"
+              required
+              class="w-full border border-line bg-white px-4 py-3 font-body text-sm text-ink placeholder:text-steel/60 focus:outline-none focus:border-blueprint focus:ring-1 focus:ring-blueprint transition-colors"
+              placeholder="correo@empresa.com"
+            />
+          </label>
+          <label class="block sm:col-span-1">
+            <span class="font-tech text-[10px] tracking-[0.25em] uppercase text-steel mb-1 block">Teléfono</span>
+            <input
+              type="tel"
+              name="telefono"
+              class="w-full border border-line bg-white px-4 py-3 font-body text-sm text-ink placeholder:text-steel/60 focus:outline-none focus:border-blueprint focus:ring-1 focus:ring-blueprint transition-colors"
+              placeholder="+58 ..."
+            />
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="font-tech text-[10px] tracking-[0.25em] uppercase text-steel mb-1 block">Mensaje *</span>
+            <textarea
+              name="mensaje"
+              required
+              rows="5"
+              class="w-full border border-line bg-white px-4 py-3 font-body text-sm text-ink placeholder:text-steel/60 focus:outline-none focus:border-blueprint focus:ring-1 focus:ring-blueprint transition-colors resize-none"
+              placeholder="Cuéntanos sobre tu proyecto..."
+            ></textarea>
+          </label>
+          <div class="sm:col-span-2 flex items-center gap-4">
+            <button
+              type="submit"
+              class="bg-ink text-paper font-tech text-[11px] tracking-[0.2em] uppercase px-7 py-4 hover:bg-blueprint transition-colors duration-200 cursor-pointer"
+            >
+              Enviar consulta →
+            </button>
+            <a
+              href={`https://wa.me/${site.whatsapp.number.replace("+", "")}?text=${encodeURIComponent(site.whatsapp.message)}`}
+              target="_blank"
+              rel="noopener"
+              class="font-tech text-[11px] tracking-[0.2em] uppercase text-ink/70 hover:text-blueprint transition-colors"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Oficinas -->
+      <div class="lg:col-span-5">
+        <p class="font-tech text-[10px] tracking-[0.3em] uppercase text-blueprint mb-4">Oficinas</p>
+        <div class="space-y-3">
+          {
+            site.offices.map((o, i) => (
+              <div class="border border-line bg-white p-4">
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="font-display text-lg uppercase tracking-wide text-ink">0{i + 1} · {o.country}</h3>
+                  <span class="font-tech text-[9px] tracking-[0.2em] uppercase text-blueprint">OFIC-0{i + 1}</span>
+                </div>
+                <p class="font-body text-sm text-ink/70 leading-relaxed">{o.address}</p>
+                <p class="font-tech text-xs text-ink/60 mt-2">{o.phone}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

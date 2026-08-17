@@ -1,0 +1,40 @@
+---
+import { site } from "../../data/site";
+const obras = Array.from({ length: 13 }, (_, i) => ({
+  image: `/images/obra-${String(i + 1).padStart(2, "0")}.jpg`,
+}));
+---
+
+<section id="portafolio" class="relative bg-ink text-paper">
+  <div class="px-5 md:px-10 lg:px-16 py-16 md:py-24">
+    <div class="flex items-end justify-between gap-6 mb-12">
+      <div>
+        <p class="font-tech text-[10px] tracking-[0.3em] uppercase text-[#9fb6c8] mb-3">LÁMINA 08 · OBRAS</p>
+        <h2 class="font-display uppercase text-[clamp(2rem,6vw,4.5rem)] leading-none">Obras destacadas</h2>
+      </div>
+      <span class="hidden md:inline font-tech text-[10px] tracking-[0.25em] uppercase text-[#9fb6c8]">
+        146+ EJECUTADAS · SELECCIÓN
+      </span>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+      {
+        obras.map((o, i) => (
+          <figure class={i % 5 === 0 ? "col-span-2 row-span-2" : ""}>
+            <div class="group relative overflow-hidden border border-paper/10">
+              <img
+                src={o.image}
+                alt={`Obra DISOCA ${i + 1}`}
+                class={`w-full ${i % 5 === 0 ? "aspect-[1/1]" : "aspect-[3/4]"} object-cover transition-transform duration-500 group-hover:scale-105`}
+                loading="lazy"
+              />
+              <span class="absolute top-2 left-2 font-tech text-[9px] tracking-[0.2em] uppercase text-paper/80 bg-ink/60 px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                OBR-{String(i + 1).padStart(3, "0")}
+              </span>
+            </div>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

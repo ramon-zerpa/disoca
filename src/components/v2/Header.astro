@@ -1,0 +1,81 @@
+---
+import { site } from "../../data/site";
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
+  <div class="flex items-center justify-between px-5 md:px-10 py-5">
+    <a href="#top" class="block w-36 md:w-44 invert" aria-label="DISOCA — Inicio">
+      <img
+        src="/images/logo-disoca-transparent.png"
+        alt="DISOCA"
+        class="w-full h-auto"
+        width="500"
+        height="151"
+      />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 font-mono text-[11px] tracking-[0.2em] uppercase">
+      {
+        site.nav.map((item, i) => (
+          <a href={item.href} class="group flex items-center gap-1.5 hover:text-[#ea580c] transition-colors duration-200">
+            <span class="text-[#ea580c]">0{i + 1}</span>
+            <span>{item.label}</span>
+          </a>
+        ))
+      }
+    </nav>
+
+    <button
+      id="v2-menu-btn"
+      class="lg:hidden font-mono text-[11px] tracking-[0.2em] uppercase flex items-center gap-2"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      <span>Menú</span>
+      <span class="text-[#ea580c]">+</span>
+    </button>
+  </div>
+
+  <div
+    id="v2-mobile-menu"
+    class="hidden lg:hidden fixed inset-0 bg-[#0a0a0a] z-40 flex-col justify-center px-8"
+    style="mix-blend-mode: normal;"
+  >
+    <nav class="flex flex-col gap-2">
+      {
+        site.nav.map((item, i) => (
+          <a
+            href={item.href}
+            class="v2-mobile-link group flex items-baseline gap-4 py-3 border-b border-[#262626]"
+          >
+            <span class="font-mono text-xs text-[#ea580c]">0{i + 1}</span>
+            <span class="font-[Archivo] font-black uppercase text-4xl tracking-tight group-hover:text-[#ea580c] transition-colors">
+              {item.label}
+            </span>
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("v2-menu-btn");
+  const menu = document.getElementById("v2-mobile-menu");
+  let open = false;
+
+  const setMenu = (state: boolean) => {
+    open = state;
+    if (!menu || !btn) return;
+    menu.classList.toggle("hidden", !open);
+    menu.classList.toggle("flex", open);
+    btn.setAttribute("aria-expanded", String(open));
+    btn.innerHTML = open
+      ? '<span>Cerrar</span><span class="text-[#ea580c]">×</span>'
+      : '<span>Menú</span><span class="text-[#ea580c]">+</span>';
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+
+  btn?.addEventListener("click", () => setMenu(!open));
+  menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+</script>

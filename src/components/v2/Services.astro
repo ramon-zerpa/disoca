@@ -1,0 +1,47 @@
+---
+import { site } from "../../data/site";
+---
+
+<section id="servicios" class="px-5 md:px-10 py-24 md:py-36">
+  <div class="flex items-baseline justify-between font-mono text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-[#fafafa]/50 mb-12">
+    <span class="text-[#ea580c]">02 / Servicios</span>
+    <span class="hidden sm:inline">Líneas principales</span>
+  </div>
+
+  <h2 class="font-[Archivo] font-black uppercase leading-[0.85] tracking-[-0.04em] text-[clamp(2.6rem,8vw,7.5rem)] mb-14 md:mb-20">
+    Lo que<br /><span class="text-transparent [-webkit-text-stroke:2px_#fafafa]">hacemos</span>
+  </h2>
+
+  <div class="border-t border-[#262626]">
+    {
+      site.services.map((s, i) => (
+        <article class="v2-service group relative border-b border-[#262626] cursor-pointer">
+          <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center py-10 md:py-14">
+            <div class="md:col-span-1 font-mono text-xs text-[#ea580c]">
+              0{i + 1}
+            </div>
+            <h3 class="md:col-span-5 font-[Archivo] font-black uppercase tracking-[-0.03em] leading-[0.9] text-3xl md:text-5xl group-hover:text-[#ea580c] group-hover:translate-x-2 transition-all duration-300">
+              {s.title}
+            </h3>
+            <p class="md:col-span-4 text-sm text-[#fafafa]/55 leading-relaxed">
+              {s.description}
+            </p>
+            <div class="hidden md:flex md:col-span-2 justify-end">
+              <span class="w-12 h-12 border border-[#fafafa]/25 flex items-center justify-center text-lg group-hover:bg-[#ea580c] group-hover:border-[#ea580c] group-hover:rotate-45 transition-all duration-300">
+                ↗
+              </span>
+            </div>
+          </div>
+
+          <div class="md:hidden -mt-2 mb-8 overflow-hidden border border-[#262626]">
+            <img src={s.image} alt={s.title} class="w-full h-44 object-cover" loading="lazy" />
+          </div>
+
+          <div class="v2-service-img pointer-events-none hidden md:block absolute right-[38%] top-1/2 -translate-y-1/2 w-72 h-48 opacity-0 scale-90 rotate-[-4deg] group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 transition-all duration-300 z-20 overflow-hidden shadow-2xl shadow-black/60">
+            <img src={s.image} alt="" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

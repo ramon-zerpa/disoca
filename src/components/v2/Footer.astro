@@ -1,0 +1,58 @@
+---
+import { site } from "../../data/site";
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[#262626]">
+  <div class="px-5 md:px-10 py-14 md:py-20">
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <img
+          src="/images/logo-disoca-transparent.png"
+          alt="DISOCA"
+          class="w-44 md:w-56 invert mb-6"
+          width="500"
+          height="151"
+          loading="lazy"
+        />
+        <p class="text-sm text-[#fafafa]/50 leading-relaxed max-w-sm">
+          {site.tagline} desde {site.since}. Soluciones integradas de ingeniería, procura y construcción en Latinoamérica.
+        </p>
+      </div>
+
+      <div class="md:col-span-3">
+        <h4 class="font-mono text-[10px] tracking-[0.2em] uppercase text-[#ea580c] mb-5">[ Índice ]</h4>
+        <ul class="space-y-3">
+          {
+            site.nav.map((item) => (
+              <li>
+                <a href={item.href} class="text-sm text-[#fafafa]/60 hover:text-[#ea580c] transition-colors">
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="md:col-span-4">
+        <h4 class="font-mono text-[10px] tracking-[0.2em] uppercase text-[#ea580c] mb-5">[ Oficinas ]</h4>
+        <ul class="space-y-2 font-mono text-xs text-[#fafafa]/60">
+          {site.offices.map((o) => <li>{o.country}</li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="overflow-hidden px-5 md:px-10" aria-hidden="true">
+    <div class="font-[Archivo] font-black uppercase text-center leading-[0.8] tracking-[-0.05em] text-[clamp(4rem,17vw,16rem)] text-[#fafafa]/[0.06] select-none translate-y-[18%]">
+      DISOCA
+    </div>
+  </div>
+
+  <div class="border-t border-[#262626] px-5 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[10px] tracking-[0.2em] uppercase text-[#fafafa]/40">
+    <span>© {year} {site.name}</span>
+    <span class="text-[#ea580c]">Ingeniería y Construcción</span>
+    <span>{site.since} — {year}</span>
+  </div>
+</footer>

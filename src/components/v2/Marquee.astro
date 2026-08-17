@@ -1,0 +1,39 @@
+---
+const items = [
+  "Obras Eléctricas",
+  "Metalmecánica",
+  "Construcción Civil",
+  "Geotécnica",
+  "Vialidad y Asfaltado",
+];
+const row = [...items, ...items, ...items];
+---
+
+<div class="border-y border-[#262626] bg-[#0a0a0a] py-4 overflow-hidden select-none" aria-hidden="true">
+  <div class="v2-marquee flex items-center gap-8 w-max">
+    {
+      row.map((item) => (
+        <span class="flex items-center gap-8 font-[Archivo] font-black uppercase tracking-tight text-xl md:text-2xl text-[#fafafa]/25 whitespace-nowrap">
+          {item}
+          <span class="text-[#ea580c] text-sm">◆</span>
+        </span>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .v2-marquee {
+    animation: v2-marquee 32s linear infinite;
+  }
+  @keyframes v2-marquee {
+    to {
+      transform: translateX(-33.333%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .v2-marquee {
+      animation: none;
+    }
+  }
+</style>

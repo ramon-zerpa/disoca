@@ -1,0 +1,65 @@
+---
+import { site } from "../../data/site";
+---
+
+<section id="nosotros" class="relative bg-ink text-paper">
+  <div class="px-5 md:px-10 lg:px-16 py-16 md:py-24">
+    <div class="flex items-end justify-between gap-6 mb-12">
+      <div>
+        <p class="font-tech text-[10px] tracking-[0.3em] uppercase text-[#9fb6c8] mb-3">LÁMINA 03 · CIFRAS</p>
+        <h2 class="font-display uppercase text-[clamp(2rem,6vw,4.5rem)] leading-none">En números</h2>
+      </div>
+      <span class="hidden md:inline font-tech text-[10px] tracking-[0.25em] uppercase text-[#9fb6c8]">
+        ESCALA 1:1 · VERIFICADO
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-12">
+      {
+        site.counters.map((c, i) => (
+          <div class="relative pt-8">
+            <!-- Línea de cota -->
+            <div class="absolute top-0 left-0 right-0 h-px bg-[#3c4f5e]" aria-hidden="true">
+              <span class="absolute -left-[5px] top-[-4px] w-0 h-0 border-y-[5px] border-y-transparent border-r-[8px] border-r-[#f04e23]"></span>
+              <span class="absolute -right-[5px] top-[-4px] w-0 h-0 border-y-[5px] border-y-transparent border-l-[8px] border-l-[#f04e23]"></span>
+              <span class="absolute left-0 right-0 top-[-6px] h-px bg-[#f04e23]/60" aria-hidden="true"></span>
+            </div>
+            <span class="font-tech text-[9px] tracking-[0.3em] uppercase text-[#f04e23] mb-2 block">
+              MEDIDA 0{i + 1}
+            </span>
+            <p class="font-display text-5xl md:text-6xl leading-none">
+              <span class="v3-count" data-target={c.value}>{c.value}</span>{c.suffix}
+            </p>
+            <p class="mt-2 font-body text-sm text-[#9fb6c8]">{c.label}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const els = document.querySelectorAll<HTMLElement>(".v3-count");
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        const el = e.target as HTMLElement;
+        io.unobserve(el);
+        const target = Number(el.dataset.target ?? 0);
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const dur = reduce ? 0 : 1200;
+        const start = performance.now();
+        const tick = (now: number) => {
+          const p = dur === 0 ? 1 : Math.min((now - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = String(Math.round(target * eased));
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+    },
+    { threshold: 0.4 }
+  );
+  els.forEach((el) => io.observe(el));
+</script>

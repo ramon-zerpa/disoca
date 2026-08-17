@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/*
+  REGLA RESPONSIVE (fija):
+  Breakpoints: 360px (base) · 768px (md) · 1024px (lg, desktop) · 1440px (xl)
+  Menú: nav de escritorio desde >=1024px (lg); menú responsive <1024px.
+  Ver RESPONSIVE.md para la regla completa.
+*/
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* V2 — editorial oscuro */
+  --color-navy-950: #0a1628;
+  --color-navy-900: #0f1d32;
+  --color-navy-800: #1a2d4a;
+  --color-navy-700: #2a3f5e;
+  --color-navy-600: #3d5678;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
+  --color-accent-400: #fb923c;
+
+  /* V3 — light theme, "laminas de dibujo tecnico" */
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-tech: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-paper: #f3f5f4;
+  --color-ink: #141b19;
+  --color-blueprint: #1c5b8e;
+  --color-steel: #7a8580;
+  --color-signal: #f04e23;
+  --color-line: #d6dbd8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-navy-950);
+    overflow-x: hidden;
+  }
+}
