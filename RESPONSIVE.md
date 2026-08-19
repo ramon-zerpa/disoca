@@ -15,11 +15,10 @@
 - Clases Tailwind a usar: `hidden lg:flex` (nav desktop), `lg:hidden` (botón + menú móvil).
 
 ## Implementación en Tailwind (ya aplicada)
-- `src/components/v2/Header.astro` — botón y menú móvil con `lg:hidden`; nav con `hidden lg:flex`.
-- `src/components/Header.astro` (v1) — mismo patrón.
+- `src/components/v3/Header.astro` — botón y menú móvil con `lg:hidden`; nav con `hidden lg:flex`.
 
 ## Convenciones por sección
-- Tipografía display: usar `clamp(min, vw, max)` para titulares (ya definido en componentes v2).
+- Tipografía display: usar `clamp(min, vw, max)` para titulares (ya definido en componentes v3).
 - Padding de sección: `px-5 md:px-10` (móvil compacto → tablet/desktop).
 - Grillas: partir de `grid-cols-1` o `grid-cols-2` en móvil, expandir en `md`/`lg`/`xl`.
 - Imágenes: siempre `object-cover` + `w-full`; nunca fijas en px.

@@ -26,7 +26,7 @@ import { site } from "../../data/site";
               href={item.href}
               class="group flex items-center gap-1.5 text-ink/80 hover:text-blueprint transition-colors duration-200"
             >
-              <span class="text-blueprint">L-{String(i + 1).padStart(2, "0")}</span>
+              <span class="text-blueprint">{String(i + 1).padStart(2, "0")}</span>
               <span>{item.label}</span>
             </a>
           ))
@@ -57,7 +57,7 @@ import { site } from "../../data/site";
             href={item.href}
             class="v3-mobile-link group flex items-baseline gap-4 py-4 border-b border-line"
           >
-            <span class="font-tech text-xs text-blueprint">L-{String(i + 1).padStart(2, "0")}</span>
+            <span class="font-tech text-xs text-blueprint">{String(i + 1).padStart(2, "0")}</span>
             <span class="font-display text-4xl uppercase tracking-wide text-ink group-hover:text-blueprint transition-colors">
               {item.label}
             </span>

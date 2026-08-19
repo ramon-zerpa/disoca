@@ -14,7 +14,7 @@
   ```pwsh
   & $chrome --headless=new --disable-gpu --user-data-dir="$env:TEMP\opencode\edge-$w" `
     --screenshot="out.png" --window-size="1440,4000" --hide-scrollbars `
-    --virtual-time-budget=9000 "http://localhost:4325/v2/"
+    --virtual-time-budget=9000 "http://localhost:4325/v3/"
   ```
 
 ## Responsive (REGLAs FIJAS)
@@ -27,4 +27,4 @@
 
 - Astro (estático) + Tailwind CSS 4 + TypeScript.
 - Dev server: `npx astro dev --port 4325`.
-- Página principal v2: `/v2` (`src/pages/v2.astro`); v1 en `/`.
+- Página única: `/v3` (`src/pages/v3.astro`); `/` redirige a `/v3`. Versiones v1/v2 descartadas.
