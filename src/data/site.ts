@@ -20,7 +20,7 @@ export const site = {
     subtitle: "desde 1992",
     description:
       "Somos una empresa de soluciones integradas. Evaluamos necesidades, realizamos Ingeniería, Procura y Construcción. Somos instaladores y operadores especializados.",
-    image: "/images/hero-bg.jpg",
+    image: "/images/stock/hero.jpg",
     cta: [
       { label: "Nuestros Servicios", href: "#servicios" },
       { label: "Contáctanos", href: "#contacto" },
@@ -32,19 +32,19 @@ export const site = {
       title: "Obras Eléctricas",
       description:
         "DISOCA se ha posicionado como empresa líder en el mercado nacional e internacional de servicios y construcción de obras eléctricas, líneas de transmisión y distribución y generación eléctrica.",
-      image: "/images/servicio-obras-electricas.jpg",
+      image: "/images/stock/servicio-electricas.jpg",
     },
     {
       title: "Metalmecánica",
       description:
         "DISOCA fabrica, suministra e instala estructuras metálicas y armaduras, montaje de sistemas de tuberías y tanques de combustible y ejecuta la construcción de galpones y naves industriales.",
-      image: "/images/servicio-metalmecanica.jpg",
+      image: "/images/stock/servicio-metalmecanica.jpg",
     },
     {
       title: "Construcción Civil",
       description:
         "DISOCA se ha encargado en el tiempo de ejecutar la infraestructura en diferentes ámbitos de la construcción: edificaciones, viviendas, urbanismos, vialidad y carreteras.",
-      image: "/images/servicio-construccion-civil.jpg",
+      image: "/images/stock/servicio-civil.jpg",
     },
   ],
 
@@ -67,10 +67,10 @@ export const site = {
       "La empresa DISOCA fue creada en el año 1992, convirtiéndose con el tiempo en una empresa líder en el mercado nacional e internacional, de Servicios y Construcción de obras Eléctricas, Metalmecánicas, Geotécnicas y Civiles.",
       "A lo largo de estos años de existencia, la empresa DISOCA ha acometido diversas obras de importancia en diferentes organismos e instituciones públicas y privadas en diferentes países. Nuestra empresa posee una estructura operativa desarrollada de acuerdo a la experiencia que ha tenido en los últimos años. Estamos enfocados en la obtención de la excelencia, con profesionales independientes en cada área de especialización.",
     ],
-    image: "/images/historia-img.jpg",
+    image: "/images/stock/historia.jpg",
   },
 
-  skillsImage: "/images/habilidades-img.jpg",
+  skillsImage: "/images/stock/habilidades.jpg",
   empresaImage: "/images/empresa-pic.jpg",
 
   skills: [
@@ -84,23 +84,23 @@ export const site = {
   areas: [
     {
       title: "Eléctrica",
-      image: "/images/area-electrica.jpg",
+      image: "/images/stock/area-electrica.jpg",
     },
     {
       title: "Metalmecánica",
-      image: "/images/area-metalmecanica.jpg",
+      image: "/images/stock/area-metalmecanica.jpg",
     },
     {
       title: "Construcción Civil",
-      image: "/images/area-construccion-civil.jpg",
+      image: "/images/stock/area-civil.jpg",
     },
     {
       title: "Geotécnica",
-      image: "/images/area-geotecnica.jpg",
+      image: "/images/stock/area-geotecnica.jpg",
     },
     {
       title: "Vialidad y Asfaltado",
-      image: "/images/area-asfaltado.jpg",
+      image: "/images/stock/area-asfaltado.jpg",
     },
   ],
 
