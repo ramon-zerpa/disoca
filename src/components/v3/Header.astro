@@ -45,54 +45,55 @@ import { site } from "../../data/site";
       </button>
     </div>
   </div>
-
-  <!-- Menú móvil: overlay a pantalla completa -->
-  <div
-    id="v3-mobile-menu"
-    class="hidden lg:hidden fixed inset-0 z-[60] bg-paper flex-col"
-    aria-hidden="true"
-  >
-    <div class="h-[3px] bg-signal" aria-hidden="true"></div>
-    <div class="flex items-center justify-between px-5 py-4 border-b border-line">
-      <img
-        src="/images/logo-disoca-transparent.png"
-        alt="DISOCA"
-        class="h-9 w-auto"
-        width="500"
-        height="151"
-      />
-      <button
-        id="v3-menu-close"
-        class="font-tech text-[11px] tracking-[0.15em] uppercase flex items-center gap-2 text-ink"
-        aria-label="Cerrar menú"
-      >
-        <span>Cerrar</span>
-        <span class="text-signal">×</span>
-      </button>
-    </div>
-
-    <nav class="flex flex-col px-6 pt-6 pb-8 overflow-y-auto">
-      {
-        site.nav.map((item, i) => (
-          <a
-            href={item.href}
-            class="v3-mobile-link group flex items-baseline gap-4 py-4 border-b border-line"
-          >
-            <span class="font-tech text-xs text-blueprint">{String(i + 1).padStart(2, "0")}</span>
-            <span class="font-display text-4xl uppercase tracking-wide text-ink group-hover:text-blueprint transition-colors">
-              {item.label}
-            </span>
-          </a>
-        ))
-      }
-    </nav>
-
-    <div class="mt-auto px-6 py-6 border-t border-line flex items-center justify-between font-tech text-[10px] tracking-[0.25em] uppercase text-steel">
-      <span>VE · RD</span>
-      <span class="text-blueprint">EST. {site.since}</span>
-    </div>
-  </div>
 </header>
+
+<!-- Menú móvil: overlay full-screen FUERA del header (el backdrop-blur del header
+     lo convertiría en containing block y el fixed no cubriría la pantalla) -->
+<div
+  id="v3-mobile-menu"
+  class="hidden lg:hidden fixed inset-0 z-[60] bg-paper flex-col overflow-y-auto"
+  aria-hidden="true"
+>
+  <div class="h-[3px] bg-signal" aria-hidden="true"></div>
+  <div class="sticky top-0 bg-paper flex items-center justify-between px-5 py-4 border-b border-line">
+    <img
+      src="/images/logo-disoca-transparent.png"
+      alt="DISOCA"
+      class="h-9 w-auto"
+      width="500"
+      height="151"
+    />
+    <button
+      id="v3-menu-close"
+      class="font-tech text-[11px] tracking-[0.15em] uppercase flex items-center gap-2 text-ink"
+      aria-label="Cerrar menú"
+    >
+      <span>Cerrar</span>
+      <span class="text-signal">×</span>
+    </button>
+  </div>
+
+  <nav class="flex flex-col px-6 pt-6 pb-8">
+    {
+      site.nav.map((item, i) => (
+        <a
+          href={item.href}
+          class="v3-mobile-link group flex items-baseline gap-4 py-4 border-b border-line"
+        >
+          <span class="font-tech text-xs text-blueprint">{String(i + 1).padStart(2, "0")}</span>
+          <span class="font-display text-2xl uppercase tracking-wide text-ink group-hover:text-blueprint transition-colors">
+            {item.label}
+          </span>
+        </a>
+      ))
+    }
+  </nav>
+
+  <div class="mt-auto px-6 py-6 border-t border-line flex items-center justify-between font-tech text-[10px] tracking-[0.25em] uppercase text-steel">
+    <span>VE · RD</span>
+    <span class="text-blueprint">EST. {site.since}</span>
+  </div>
+</div>
 
 <script>
   const btn = document.getElementById("v3-menu-btn");
