@@ -42,3 +42,18 @@
     overflow-x: hidden;
   }
 }
+
+/* Carrousel infinito de Áreas (desktop >=1024px) */
+.areas-track {
+  animation: areas-scroll 24s linear infinite;
+}
+
+.areas-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes areas-scroll {
+  to {
+    transform: translateX(-150%);
+  }
+}

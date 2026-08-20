@@ -3,7 +3,7 @@ import { site } from "../../data/site";
 ---
 
 <section id="areas" class="relative bg-ink text-paper">
-  <div class="px-5 md:px-10 lg:px-16 py-16 md:py-24">
+  <div class="px-5 md:px-10 lg:px-16 pt-16 md:pt-12 pb-16 md:pb-24">
     <div class="flex items-end justify-between gap-6 mb-12">
       <div>
         <p class="font-tech text-[10px] tracking-[0.3em] uppercase text-sky mb-3">06 · ÁREAS</p>
@@ -14,7 +14,7 @@ import { site } from "../../data/site";
       </span>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:hidden gap-3 md:gap-4">
       {
         site.areas.map((a, i) => (
           <figure class="group relative overflow-hidden border border-paper/10">
@@ -31,6 +31,29 @@ import { site } from "../../data/site";
           </figure>
         ))
       }
+    </div>
+
+    <div class="hidden lg:block overflow-hidden" aria-label="Áreas de desempeño">
+      <div class="areas-track flex w-full">
+        {
+          [...site.areas, ...site.areas].map((a, i) => (
+            <div class="flex-none w-1/4 pr-4" aria-hidden={i >= site.areas.length ? "true" : undefined}>
+              <figure class="group relative overflow-hidden border border-paper/10 h-full">
+                <img
+                  src={a.image}
+                  alt={a.title}
+                  class="w-full aspect-square object-cover grayscale-[20%] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent p-3 pt-10">
+                  <span class="font-tech text-[9px] tracking-[0.2em] uppercase text-sky block">ÁREA 0{(i % site.areas.length) + 1}</span>
+                  <figcaption class="font-display text-base md:text-lg uppercase tracking-wide text-paper">{a.title}</figcaption>
+                </div>
+              </figure>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>

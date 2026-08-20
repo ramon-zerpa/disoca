@@ -7,8 +7,8 @@ export const site = {
   instagram: "https://www.instagram.com/disoca_int/",
 
   nav: [
-    { label: "Inicio", href: "#inicio" },
-    { label: "Nosotros", href: "#nosotros" },
+    { label: "Inicio", href: "#top" },
+    { label: "Nosotros", href: "#historia" },
     { label: "Servicios", href: "#servicios" },
     { label: "Portafolio", href: "#portafolio" },
     { label: "Contacto", href: "#contacto" },
@@ -31,34 +31,46 @@ export const site = {
     {
       title: "Obras Eléctricas",
       description:
-        "DISOCA se ha posicionado como empresa líder en el mercado nacional e internacional de servicios y construcción de obras eléctricas, líneas de transmisión y distribución y generación eléctrica.",
+        "Ejecutamos obras eléctricas, líneas de transmisión y distribución, y generación eléctrica, con estándares de clase mundial en cada proyecto.",
       image: "/images/stock/servicio-electricas.jpg",
     },
     {
       title: "Metalmecánica",
       description:
-        "DISOCA fabrica, suministra e instala estructuras metálicas y armaduras, montaje de sistemas de tuberías y tanques de combustible y ejecuta la construcción de galpones y naves industriales.",
+        "Fabricamos, suministramos e instalamos estructuras metálicas y armaduras, montamos tuberías y tanques, y construimos galpones y naves industriales.",
       image: "/images/stock/servicio-metalmecanica.jpg",
     },
     {
       title: "Construcción Civil",
       description:
-        "DISOCA se ha encargado en el tiempo de ejecutar la infraestructura en diferentes ámbitos de la construcción: edificaciones, viviendas, urbanismos, vialidad y carreteras.",
+        "Cubrimos todos los ámbitos de la construcción: edificaciones, viviendas, urbanismos, vialidad y carreteras, con soluciones integrales llave en mano.",
       image: "/images/stock/servicio-civil.jpg",
     },
     {
       title: "Plantas Fotovoltaicas",
       description:
-        "Instalación de plantas fotovoltaicas y sistemas de energía solar: diseño, montaje, interconexión y puesta en marcha de paneles solares para generación limpia y sostenible.",
-      image: "/images/stock/solar-campo.jpg",
+        "Instalamos plantas fotovoltaicas y sistemas de energía solar: diseño, montaje, interconexión y puesta en marcha para generación limpia.",
+      image: "/images/stock/solar-industrial.jpg",
+    },
+    {
+      title: "Geotécnica",
+      description:
+        "Desarrollamos estudios y obras geotécnicas: estabilización de suelos, cimentaciones, movimientos de tierra y soluciones para terrenos difíciles.",
+      image: "/images/stock/area-geotecnica.jpg",
+    },
+    {
+      title: "Vialidad y Asfaltado",
+      description:
+        "Construimos vialidad y asfaltado con maquinaria propia: pavimentación, recubrimiento asfáltico, señalización y mantenimiento vial.",
+      image: "/images/stock/area-asfaltado.jpg",
     },
   ],
 
   vision:
-    "Ser una empresa cuya calidad en el servicio prestado le permita trascender y llegar a ser líder en el ramo de la construcción de obras eléctricas, mecánicas, electromecánicas y civiles.",
+    "Ser una empresa de ingeniería y construcción cuya excelencia en el servicio le permita trascender y consolidarse como líder en obras eléctricas, mecánicas y civiles.",
 
   mission:
-    "Realizar obras eléctricas, mecánicas, civiles, geotécnicas y de asfaltado, así como la instalación de plantas fotovoltaicas, empleando una estructura organizacional con recurso humano altamente calificado, materiales de la más reconocida calidad y utilizando tecnología de punta, contribuyendo así con el desarrollo del Estado y manteniendo una armonía con el medio ambiente.",
+    "Ejecutamos obras eléctricas, mecánicas, civiles y fotovoltaicas con talento humano calificado, materiales de calidad y tecnología de punta, contribuyendo al desarrollo.",
 
   counters: [
     { value: 34, suffix: "+", label: "Años en el Mercado" },
@@ -101,6 +113,10 @@ export const site = {
     {
       title: "Construcción Civil",
       image: "/images/stock/area-civil.jpg",
+    },
+    {
+      title: "Plantas Fotovoltaicas",
+      image: "/images/stock/solar-industrial.jpg",
     },
     {
       title: "Geotécnica",
