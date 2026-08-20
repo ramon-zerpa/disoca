@@ -46,19 +46,25 @@ export const site = {
         "DISOCA se ha encargado en el tiempo de ejecutar la infraestructura en diferentes ámbitos de la construcción: edificaciones, viviendas, urbanismos, vialidad y carreteras.",
       image: "/images/stock/servicio-civil.jpg",
     },
+    {
+      title: "Plantas Fotovoltaicas",
+      description:
+        "Instalación de plantas fotovoltaicas y sistemas de energía solar: diseño, montaje, interconexión y puesta en marcha de paneles solares para generación limpia y sostenible.",
+      image: "/images/stock/solar-campo.jpg",
+    },
   ],
 
   vision:
     "Ser una empresa cuya calidad en el servicio prestado le permita trascender y llegar a ser líder en el ramo de la construcción de obras eléctricas, mecánicas, electromecánicas y civiles.",
 
   mission:
-    "Realizar obras eléctricas, mecánicas, civiles, geotécnicas y de asfaltado, empleando una estructura organizacional con recurso humano altamente calificado, materiales de la más reconocida calidad y utilizando tecnología de punta, contribuyendo así con el desarrollo del Estado y manteniendo una armonía con el medio ambiente.",
+    "Realizar obras eléctricas, mecánicas, civiles, geotécnicas y de asfaltado, así como la instalación de plantas fotovoltaicas, empleando una estructura organizacional con recurso humano altamente calificado, materiales de la más reconocida calidad y utilizando tecnología de punta, contribuyendo así con el desarrollo del Estado y manteniendo una armonía con el medio ambiente.",
 
   counters: [
-    { value: 27, suffix: "+", label: "Años en el Mercado" },
-    { value: 146, suffix: "+", label: "Obras Ejecutadas" },
-    { value: 101, suffix: "+", label: "Maquinarias y Equipos" },
-    { value: 18, suffix: "+", label: "Ingenieros y Especialistas" },
+    { value: 34, suffix: "+", label: "Años en el Mercado" },
+    { value: 247, suffix: "+", label: "Obras Ejecutadas" },
+    { value: 112, suffix: "+", label: "Maquinarias y Equipos" },
+    { value: 28, suffix: "+", label: "Ingenieros y Especialistas" },
   ],
 
   history: {
@@ -75,6 +81,7 @@ export const site = {
 
   skills: [
     { name: "Generación y Obras Eléctricas", percent: 100 },
+    { name: "Plantas Fotovoltaicas", percent: 85 },
     { name: "Metalmecánica", percent: 80 },
     { name: "Construcción Civil", percent: 90 },
     { name: "Geotécnica", percent: 80 },
@@ -140,22 +147,10 @@ export const site = {
       schedule: "Lunes - Viernes 8:00AM - 6:00PM",
     },
     {
-      country: "Panamá",
-      address: "Calle 50, edificio Plaza Morica, ciudad de Panamá.",
-      phone: "+58 274 2713694",
-      schedule: "Lunes - Viernes 8:00AM - 6:00PM",
-    },
-    {
       country: "República Dominicana",
       address:
         "Boulevard del Este, Parque Tecnológico de Punta Cana, Punta Cana, La Altagracia.",
       phone: "+1 809 203 1102",
-      schedule: "Lunes - Viernes 8:00AM - 6:00PM",
-    },
-    {
-      country: "Colombia",
-      address: "Calle 122 # 7A 69 oficina 202, Bogotá.",
-      phone: "+57 301 5350576",
       schedule: "Lunes - Viernes 8:00AM - 6:00PM",
     },
   ],

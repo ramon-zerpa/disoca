@@ -10,7 +10,7 @@ import { site } from "../../data/site";
         <h2 class="font-display uppercase text-[clamp(2rem,6vw,4.5rem)] leading-none">Hablemos de tu obra</h2>
       </div>
       <span class="hidden md:inline font-tech text-[10px] tracking-[0.25em] uppercase text-steel">
-        4 PAÍSES · <span class="text-signal">DISPONIBLES</span>
+        2 PAÍSES · <span class="text-signal">DISPONIBLES</span>
       </span>
     </div>
 
@@ -92,7 +92,7 @@ import { site } from "../../data/site";
       <!-- Oficinas -->
       <div class="lg:col-span-5">
         <p class="font-tech text-[10px] tracking-[0.3em] uppercase text-blueprint mb-4">Oficinas</p>
-        <div class="space-y-3">
+        <div class="grid sm:grid-cols-2 gap-3">
           {
             site.offices.map((o, i) => (
               <div class="border border-line bg-white p-4">
