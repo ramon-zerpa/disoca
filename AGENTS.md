@@ -28,3 +28,8 @@
 - Astro (estático) + Tailwind CSS 4 + TypeScript.
 - Dev server: `npx astro dev --port 4325`.
 - Página única: `/v3` (`src/pages/v3.astro`); `/` redirige a `/v3`. Versiones v1/v2 descartadas.
+
+## Git y entrega (REGLAS FIJAS)
+
+- **NUNCA hacer `commit` ni `push`** salvo que el usuario lo ordene explícitamente.
+- Al finalizar los cambios solicitados, **mostrar el sitio en local** abriendo Chrome en `http://localhost:4325/v3/` (navegador visible, no headless), con el dev server corriendo.

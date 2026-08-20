@@ -71,7 +71,8 @@ export const site = {
     title: "Nuestra Historia",
     text: [
       "La empresa DISOCA fue creada en el año 1992, convirtiéndose con el tiempo en una empresa líder en el mercado nacional e internacional, de Servicios y Construcción de obras Eléctricas, Metalmecánicas, Geotécnicas y Civiles.",
-      "A lo largo de estos años de existencia, la empresa DISOCA ha acometido diversas obras de importancia en diferentes organismos e instituciones públicas y privadas en diferentes países. Nuestra empresa posee una estructura operativa desarrollada de acuerdo a la experiencia que ha tenido en los últimos años. Estamos enfocados en la obtención de la excelencia, con profesionales independientes en cada área de especialización.",
+      "A lo largo de estos años de existencia, la empresa DISOCA ha acometido diversas obras de importancia en diferentes organismos e instituciones públicas y privadas en diferentes países.",
+      "Nuestra empresa posee una estructura operativa desarrollada de acuerdo a la experiencia que ha tenido en los últimos años. Estamos enfocados en la obtención de la excelencia, con profesionales independientes en cada área de especialización.",
     ],
     image: "/images/stock/historia.jpg",
   },
@@ -143,7 +144,7 @@ export const site = {
       country: "Venezuela",
       address:
         "Av. Industrial, frente a zona industrial Condibaca, galpón DISOCA, Nro 5, Barinas, estado Barinas.",
-      phone: "0273 5420239",
+      phone: "+58 273 5420239",
       schedule: "Lunes - Viernes 8:00AM - 6:00PM",
     },
     {

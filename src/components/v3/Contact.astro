@@ -77,14 +77,6 @@ import { site } from "../../data/site";
             >
               Enviar consulta →
             </button>
-            <a
-              href={`https://wa.me/${site.whatsapp.number.replace("+", "")}?text=${encodeURIComponent(site.whatsapp.message)}`}
-              target="_blank"
-              rel="noopener"
-              class="font-tech text-[11px] tracking-[0.2em] uppercase text-ink/70 hover:text-blueprint transition-colors"
-            >
-              WhatsApp
-            </a>
           </div>
         </form>
       </div>
@@ -92,7 +84,7 @@ import { site } from "../../data/site";
       <!-- Oficinas -->
       <div class="lg:col-span-5">
         <p class="font-tech text-[10px] tracking-[0.3em] uppercase text-blueprint mb-4">Oficinas</p>
-        <div class="grid sm:grid-cols-2 gap-3">
+        <div class="space-y-3">
           {
             site.offices.map((o, i) => (
               <div class="border border-line bg-white p-4">

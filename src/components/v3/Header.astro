@@ -38,6 +38,7 @@ import { site } from "../../data/site";
         class="lg:hidden font-tech text-[11px] tracking-[0.15em] uppercase flex items-center gap-2 text-ink"
         aria-label="Abrir menú"
         aria-expanded="false"
+        aria-controls="v3-mobile-menu"
       >
         <span>Menú</span>
         <span class="text-signal">+</span>
@@ -45,12 +46,32 @@ import { site } from "../../data/site";
     </div>
   </div>
 
+  <!-- Menú móvil: overlay a pantalla completa -->
   <div
     id="v3-mobile-menu"
-    class="hidden lg:hidden fixed inset-0 top-[53px] bg-paper z-40 flex-col"
+    class="hidden lg:hidden fixed inset-0 z-[60] bg-paper flex-col"
+    aria-hidden="true"
   >
     <div class="h-[3px] bg-signal" aria-hidden="true"></div>
-    <nav class="flex flex-col px-6 pt-4">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-line">
+      <img
+        src="/images/logo-disoca-transparent.png"
+        alt="DISOCA"
+        class="h-9 w-auto"
+        width="500"
+        height="151"
+      />
+      <button
+        id="v3-menu-close"
+        class="font-tech text-[11px] tracking-[0.15em] uppercase flex items-center gap-2 text-ink"
+        aria-label="Cerrar menú"
+      >
+        <span>Cerrar</span>
+        <span class="text-signal">×</span>
+      </button>
+    </div>
+
+    <nav class="flex flex-col px-6 pt-6 pb-8 overflow-y-auto">
       {
         site.nav.map((item, i) => (
           <a
@@ -65,26 +86,38 @@ import { site } from "../../data/site";
         ))
       }
     </nav>
+
+    <div class="mt-auto px-6 py-6 border-t border-line flex items-center justify-between font-tech text-[10px] tracking-[0.25em] uppercase text-steel">
+      <span>VE · RD</span>
+      <span class="text-blueprint">EST. {site.since}</span>
+    </div>
   </div>
 </header>
 
 <script>
   const btn = document.getElementById("v3-menu-btn");
+  const closeBtn = document.getElementById("v3-menu-close");
   const menu = document.getElementById("v3-mobile-menu");
   let open = false;
 
   const setMenu = (state: boolean) => {
     open = state;
-    if (!menu || !btn) return;
+    if (!menu || !btn || !closeBtn) return;
     menu.classList.toggle("hidden", !open);
     menu.classList.toggle("flex", open);
+    menu.setAttribute("aria-hidden", String(!open));
     btn.setAttribute("aria-expanded", String(open));
-    btn.innerHTML = open
-      ? '<span>Cerrar</span><span class="text-signal">×</span>'
-      : '<span>Menú</span><span class="text-signal">+</span>';
     document.body.style.overflow = open ? "hidden" : "";
   };
 
-  btn?.addEventListener("click", () => setMenu(!open));
+  btn?.addEventListener("click", () => setMenu(true));
+  closeBtn?.addEventListener("click", () => setMenu(false));
   menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setMenu(false);
+  });
+  const mq = window.matchMedia("(min-width: 1024px)");
+  mq.addEventListener?.("change", (e) => {
+    if (e.matches) setMenu(false);
+  });
 </script>

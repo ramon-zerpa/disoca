@@ -6,10 +6,10 @@ import { site } from "../../data/site";
   <div class="px-5 md:px-10 lg:px-16 py-16 md:py-24">
     <div class="flex items-end justify-between gap-6 mb-12">
       <div>
-        <p class="font-tech text-[10px] tracking-[0.3em] uppercase text-[#9fb6c8] mb-3">05 · CAPACIDAD</p>
+        <p class="font-tech text-[10px] tracking-[0.3em] uppercase text-sky mb-3">05 · CAPACIDAD</p>
         <h2 class="font-display uppercase text-[clamp(2rem,6vw,4.5rem)] leading-none">Especialidades</h2>
       </div>
-      <span class="hidden md:inline font-tech text-[10px] tracking-[0.25em] uppercase text-[#9fb6c8]">
+      <span class="hidden md:inline font-tech text-[10px] tracking-[0.25em] uppercase text-sky">
         % DE CAPACIDAD
       </span>
     </div>
@@ -20,7 +20,7 @@ import { site } from "../../data/site";
           site.skills.map((s, i) => (
             <div>
               <div class="flex justify-between font-tech text-[11px] tracking-[0.2em] uppercase mb-2">
-                <span class="text-[#9fb6c8]">{s.name}</span>
+                <span class="text-sky">{s.name}</span>
                 <span class="text-paper"><span class="v3-bar-count" data-target={s.percent}>0</span>%</span>
               </div>
               <div class="relative h-3 bg-[#1e2b34]" aria-hidden="true">
@@ -46,7 +46,7 @@ import { site } from "../../data/site";
             class="w-full aspect-[4/3] object-cover grayscale-[15%]"
             loading="lazy"
           />
-          <div class="mt-2 flex justify-between font-tech text-[9px] tracking-[0.2em] uppercase text-[#9fb6c8]">
+          <div class="mt-2 flex justify-between font-tech text-[9px] tracking-[0.2em] uppercase text-sky">
             <span>Equipos propios</span>
             <span class="text-signal">101+ unidades</span>
           </div>
