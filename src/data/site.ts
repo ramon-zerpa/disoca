@@ -14,13 +14,13 @@ export const site = {
     { label: "Contacto", href: "#contacto" },
   ],
 
-  logo: "/images/logo-disoca.jpg",
+  logo: "/images/logo-disoca.webp",
   hero: {
     title: "Ingeniería y Construcción",
     subtitle: "desde 1992",
     description:
       "Somos una empresa de soluciones integradas. Evaluamos necesidades, realizamos Ingeniería, Procura y Construcción. Somos instaladores y operadores especializados.",
-    image: "/images/stock/hero.jpg",
+    image: "/images/stock/hero.webp",
     cta: [
       { label: "Nuestros Servicios", href: "#servicios" },
       { label: "Contáctanos", href: "#contacto" },
@@ -32,37 +32,37 @@ export const site = {
       title: "Obras Eléctricas",
       description:
         "Ejecutamos obras eléctricas, líneas de transmisión y distribución, y generación eléctrica, con estándares de clase mundial en cada proyecto.",
-      image: "/images/stock/servicio-electricas.jpg",
+      image: "/images/stock/servicio-electricas.webp",
     },
     {
       title: "Metalmecánica",
       description:
         "Fabricamos, suministramos e instalamos estructuras metálicas y armaduras, montamos tuberías y tanques, y construimos galpones y naves industriales.",
-      image: "/images/stock/servicio-metalmecanica.jpg",
+      image: "/images/stock/servicio-metalmecanica.webp",
     },
     {
       title: "Construcción Civil",
       description:
         "Cubrimos todos los ámbitos de la construcción: edificaciones, viviendas, urbanismos, vialidad y carreteras, con soluciones integrales llave en mano.",
-      image: "/images/stock/servicio-civil.jpg",
+      image: "/images/stock/servicio-civil.webp",
     },
     {
       title: "Plantas Fotovoltaicas",
       description:
         "Instalamos plantas fotovoltaicas y sistemas de energía solar: diseño, montaje, interconexión y puesta en marcha para generación limpia.",
-      image: "/images/stock/solar-industrial.jpg",
+      image: "/images/stock/solar-industrial.webp",
     },
     {
       title: "Geotécnica",
       description:
         "Desarrollamos estudios y obras geotécnicas: estabilización de suelos, cimentaciones, movimientos de tierra y soluciones para terrenos difíciles.",
-      image: "/images/stock/area-geotecnica.jpg",
+      image: "/images/stock/area-geotecnica.webp",
     },
     {
       title: "Vialidad y Asfaltado",
       description:
         "Construimos vialidad y asfaltado con maquinaria propia: pavimentación, recubrimiento asfáltico, señalización y mantenimiento vial.",
-      image: "/images/stock/area-asfaltado.jpg",
+      image: "/images/stock/area-asfaltado.webp",
     },
   ],
 
@@ -86,11 +86,11 @@ export const site = {
       "A lo largo de estos años de existencia, la empresa DISOCA ha acometido diversas obras de importancia en diferentes organismos e instituciones públicas y privadas en diferentes países.",
       "Nuestra empresa posee una estructura operativa desarrollada de acuerdo a la experiencia que ha tenido en los últimos años. Estamos enfocados en la obtención de la excelencia, con profesionales independientes en cada área de especialización.",
     ],
-    image: "/images/stock/historia.jpg",
+    image: "/images/stock/historia.webp",
   },
 
-  skillsImage: "/images/stock/habilidades.jpg",
-  empresaImage: "/images/empresa-pic.jpg",
+  skillsImage: "/images/stock/habilidades.webp",
+  empresaImage: "/images/empresa-pic.webp",
 
   skills: [
     { name: "Generación y Obras Eléctricas", percent: 100 },
@@ -104,27 +104,27 @@ export const site = {
   areas: [
     {
       title: "Eléctrica",
-      image: "/images/stock/area-electrica.jpg",
+      image: "/images/stock/area-electrica.webp",
     },
     {
       title: "Metalmecánica",
-      image: "/images/stock/area-metalmecanica.jpg",
+      image: "/images/stock/area-metalmecanica.webp",
     },
     {
       title: "Construcción Civil",
-      image: "/images/stock/area-civil.jpg",
+      image: "/images/stock/area-civil.webp",
     },
     {
       title: "Plantas Fotovoltaicas",
-      image: "/images/stock/solar-industrial.jpg",
+      image: "/images/stock/solar-industrial.webp",
     },
     {
       title: "Geotécnica",
-      image: "/images/stock/area-geotecnica.jpg",
+      image: "/images/stock/area-geotecnica.webp",
     },
     {
       title: "Vialidad y Asfaltado",
-      image: "/images/stock/area-asfaltado.jpg",
+      image: "/images/stock/area-asfaltado.webp",
     },
   ],
 
