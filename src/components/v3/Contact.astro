@@ -18,10 +18,12 @@ import { site } from "../../data/site";
       <!-- Formulario -->
       <div class="lg:col-span-6">
         <form
-          action="https://formspree.io/f/YOUR_FORM_ID"
+          action="https://formspree.io/f/mzepweor"
           method="POST"
           class="grid sm:grid-cols-2 gap-5"
         >
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde disoca.com" />
+          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
           <label class="block sm:col-span-1">
             <span class="font-tech text-[10px] tracking-[0.25em] uppercase text-steel mb-1 block">Nombre *</span>
             <input
@@ -79,6 +81,10 @@ import { site } from "../../data/site";
             </button>
           </div>
         </form>
+        <div id="form-success" class="hidden mt-5 border border-blueprint/30 bg-blueprint/5 p-5">
+          <p class="font-tech text-xs tracking-[0.15em] uppercase text-blueprint">Mensaje enviado correctamente</p>
+          <p class="font-body text-sm text-ink/70 mt-1">Nos pondremos en contacto contigo pronto.</p>
+        </div>
       </div>
 
       <!-- Oficinas -->
@@ -111,3 +117,11 @@ import { site } from "../../data/site";
     </div>
   </div>
 </section>
+
+<script is:inline>
+  if (window.location.search.includes("success=1")) {
+    const el = document.getElementById("form-success");
+    if (el) el.classList.remove("hidden");
+    history.replaceState(null, "", window.location.pathname);
+  }
+</script>
