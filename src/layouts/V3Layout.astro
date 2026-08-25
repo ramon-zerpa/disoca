@@ -22,11 +22,13 @@ const pageDesc = description ?? site.hero.description;
     <meta property="og:description" content={pageDesc} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_VE" />
-    <link rel="canonical" href="https://disoca.com" />
+    <link rel="canonical" href="https://disoca.com/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#203F9A" />
     <link rel="preload" as="image" href="/images/stock/hero.webp" fetchpriority="high" />
     <link rel="preload" as="image" href="/images/stock/historia.webp" />
+    <link rel="preload" as="font" href="/fonts/anton-400.woff2" type="font/woff2" crossorigin />
+    <link rel="preload" as="font" href="/fonts/roboto-700.woff2" type="font/woff2" crossorigin />
     <title>{pageTitle}</title>
   </head>
   <body class="bg-paper text-ink antialiased selection:bg-blueprint selection:text-paper">

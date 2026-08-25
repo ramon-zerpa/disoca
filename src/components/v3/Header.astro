@@ -78,7 +78,7 @@ import { site } from "../../data/site";
       site.nav.map((item, i) => (
         <a
           href={item.href}
-          class="v3-mobile-link group flex items-baseline gap-4 py-4 border-b border-line"
+          class="v3-mobile-link group flex items-baseline gap-4 py-5 min-h-[48px] border-b border-line"
         >
           <span class="font-tech text-xs text-blueprint">{String(i + 1).padStart(2, "0")}</span>
           <span class="font-display text-xl uppercase tracking-wide text-ink group-hover:text-blueprint transition-colors">
