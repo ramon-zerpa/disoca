@@ -21,6 +21,8 @@ import { site } from "../../data/site";
           <div class="absolute -bottom-px -right-px w-4 h-4 border-b-2 border-r-2 border-blueprint" aria-hidden="true"></div>
           <img
             src={site.history.image}
+            srcset="/images/stock/historia-mobile.webp 800w, /images/stock/historia.webp 1600w"
+            sizes="(max-width: 768px) 100vw, 50vw"
             alt="Historia de DISOCA"
             class="w-full aspect-[5/4] lg:aspect-auto lg:flex-1 lg:min-h-0 object-cover grayscale-[15%]"
             width="1000"
