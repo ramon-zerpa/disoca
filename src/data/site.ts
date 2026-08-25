@@ -31,8 +31,14 @@ export const site = {
     {
       title: "Obras Eléctricas",
       description:
-        "Ejecutamos obras eléctricas, líneas de transmisión y distribución, y generación eléctrica, con estándares de clase mundial en cada proyecto.",
+        "Ejecutamos obras eléctricas, líneas de transmisión y distribución, generación termoeléctrica y solar, con estándares de clase mundial en cada proyecto.",
       image: "/images/stock/servicio-electricas.webp",
+    },
+    {
+      title: "Plantas Fotovoltaicas",
+      description:
+        "Instalamos plantas fotovoltaicas y sistemas de energía solar: diseño, montaje, interconexión y puesta en marcha para generación limpia.",
+      image: "/images/stock/solar-industrial.webp",
     },
     {
       title: "Metalmecánica",
@@ -45,12 +51,6 @@ export const site = {
       description:
         "Cubrimos todos los ámbitos de la construcción: edificaciones, viviendas, urbanismos, vialidad y carreteras, con soluciones integrales llave en mano.",
       image: "/images/stock/servicio-civil.webp",
-    },
-    {
-      title: "Plantas Fotovoltaicas",
-      description:
-        "Instalamos plantas fotovoltaicas y sistemas de energía solar: diseño, montaje, interconexión y puesta en marcha para generación limpia.",
-      image: "/images/stock/solar-industrial.webp",
     },
     {
       title: "Geotécnica",
@@ -70,7 +70,7 @@ export const site = {
     "Ser una empresa de ingeniería y construcción cuya excelencia en el servicio le permita trascender y consolidarse como líder en obras eléctricas, mecánicas y civiles.",
 
   mission:
-    "Ejecutamos obras eléctricas, mecánicas, civiles y fotovoltaicas con talento humano calificado, materiales de calidad y tecnología de punta, contribuyendo al desarrollo.",
+    "Ejecutar obras eléctricas, mecánicas y civiles con talento humano calificado, materiales de calidad y tecnología de punta, impulzando el desarrollo.",
 
   counters: [
     { value: 34, suffix: "+", label: "Años en el Mercado" },
