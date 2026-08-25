@@ -14,8 +14,8 @@
 
   /* V3 — light theme, "laminas de dibujo tecnico" */
   --font-display: "Anton", "Arial Narrow", sans-serif;
-  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-tech: "IBM Plex Mono", ui-monospace, monospace;
+  --font-body: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-tech: "Roboto", ui-sans-serif, system-ui, sans-serif;
 
   --color-paper: #f3f5f4;
   --color-ink: #141b19;
